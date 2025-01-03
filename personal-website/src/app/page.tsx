@@ -1,9 +1,11 @@
 "use client";
+
 import React, { useRef, useEffect } from "react";
 import { FlipWords } from "@/components/ui/flip-words";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import { FloatingProfile } from "@/components/floating-profile";
 import { annotate } from "rough-notation";
+import CardGroup from "@/components/card-group";
 
 export default function Home() {
   const impactfulRef = useRef<HTMLSpanElement>(null);
@@ -11,35 +13,34 @@ export default function Home() {
 
   useEffect(() => {
     if (impactfulRef.current) {
-      const circleAnnotation = annotate(impactfulRef.current, {
+      const highlightAnnotation = annotate(impactfulRef.current, {
         type: "highlight",
         color: "#6b46c1",
         padding: 4,
       });
-      circleAnnotation.show();
+      highlightAnnotation.show();
     }
-  }, []);
 
-  useEffect(() => {
     if (impactfulRef2.current) {
-      const circleAnnotation = annotate(impactfulRef2.current, {
+      const strikeThroughAnnotation = annotate(impactfulRef2.current, {
         type: "strike-through",
         color: "#6b46c1",
         padding: 4,
       });
-      circleAnnotation.show();
+      strikeThroughAnnotation.show();
     }
   }, []);
 
   return (
-    <div className="bg-black text-white min-h-screen relative">
+    <div className="bg-black text-white min-h-screen relative overflow-x-hidden">
       <main>
         <FloatingProfile />
         <div className="flex flex-col items-center justify-center min-h-screen gap-6">
           <WavyBackground
             colors={["#4fd1c5", "#81e6d9", "#38bdf8", "#4c51bf", "#a3bffa"]}
+            containerClassName="max-h-[70vh]"
           >
-            <h1 className="text-4xl font-medium">
+            <h1 className="text-4xl font-medium mt-48">
               Kevin Zheng,
               <FlipWords
                 words={[
@@ -66,6 +67,7 @@ export default function Home() {
               Pittsburgh, PA.
             </p>
           </WavyBackground>
+          <CardGroup />
         </div>
       </main>
     </div>
