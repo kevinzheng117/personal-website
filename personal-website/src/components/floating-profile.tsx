@@ -33,7 +33,7 @@ export function FloatingProfile() {
   return (
     <>
       <div ref={profileRef} className="h-0" />
-      <div className="fixed inset-x-0 top-0 z-50">
+      <div className="md:fixed absolute inset-x-0 top-0 z-50">
         <div className="mx-auto w-full">
           <div className="relative flex items-center justify-between p-4">
             <div

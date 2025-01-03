@@ -41,32 +41,34 @@ export default function Home() {
             colors={["#4fd1c5", "#81e6d9", "#38bdf8", "#4c51bf", "#a3bffa"]}
             containerClassName="max-h-[80vh]"
           >
-            <h1 className="text-4xl font-medium mt-48">
-              Kevin Zheng,
-              <FlipWords
-                words={[
-                  "Software Engineer",
-                  "Fullstack Developer",
-                  "Researcher",
-                  "Student",
-                ]}
-                duration={5000}
-                className={"text-cyan-300"}
-              ></FlipWords>
-            </h1>
-            <p className="m-24 text-lg mt-4 max-w-xl mx-auto">
-              Hello, I’m a student at Carnegie Mellon University focused on
-              developing{" "}
-              <span ref={impactfulRef} className="inline-block">
-                impactful software
-              </span>{" "}
-              that helps people share ideas and express what brings them joy.
-              Currently based in{" "}
-              <span ref={impactfulRef2} className="inline-block">
-                Shanghai, Millburn, Bryn Mawr,
-              </span>{" "}
-              Pittsburgh, PA.
-            </p>
+            <div className="px-12 md:px-0 text-center md:text-left">
+              <h1 className="text-2xl md:text-4xl font-medium mt-48">
+                Kevin Zheng,
+                <FlipWords
+                  words={[
+                    "Software Engineer",
+                    "Fullstack Developer",
+                    "Researcher",
+                    "Student",
+                  ]}
+                  duration={5000}
+                  className={"text-cyan-300"}
+                ></FlipWords>
+              </h1>
+              <p className="m-24 text-md md:text-lg mt-4 max-w-xl mx-auto">
+                Hello, I’m a student at Carnegie Mellon University focused on
+                developing{" "}
+                <span ref={impactfulRef} className="inline-block">
+                  impactful software
+                </span>{" "}
+                that helps people share ideas and express what brings them joy.
+                Currently based in{" "}
+                <span ref={impactfulRef2} className="inline-block">
+                  Shanghai, Millburn, Bryn Mawr,
+                </span>{" "}
+                Pittsburgh, PA.
+              </p>
+            </div>
           </WavyBackground>
           <CardGroup />
           <div className="dark flex items-center justify-center bg-background m-12">

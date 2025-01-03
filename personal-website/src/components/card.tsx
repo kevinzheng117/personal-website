@@ -14,9 +14,25 @@ export interface CardProps {
 
 export default function Card({ title, content, image, link }: CardProps) {
   return (
-    <CardContainer className="inter-var" containerClassName="py-0">
-      <CardBody className="relative group/card  hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-black border-white/[0.2] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
-        <CardItem translateZ="50" className="text-xl font-bold  text-white">
+    <CardContainer className="inter-var w-full" containerClassName="py-0">
+      <CardBody
+        className="
+          relative 
+          group/card 
+          hover:shadow-2xl 
+          hover:shadow-emerald-500/[0.1] 
+          bg-black 
+          border-white/[0.2] 
+          w-[90vw]           /* Fill available width on mobile */
+          md:w-[30rem]     /* Wider on larger screens */
+          h-auto 
+          rounded-xl 
+          p-4             /* Smaller padding on mobile */
+          sm:p-6          /* Larger padding on bigger screens */
+          border
+        "
+      >
+        <CardItem translateZ="50" className="text-xl font-bold text-white">
           {title}
         </CardItem>
         <CardItem
