@@ -2,7 +2,7 @@ import Card from "@/components/card";
 
 export default function CardGroup() {
   return (
-    <div className="flex flex-row gap-6">
+    <div className="flex flex-row gap-10 mx-32 flex-wrap justify-center">
       <Card
         title={"PathToSWE: Land Your Dream Tech Internship"}
         content={
