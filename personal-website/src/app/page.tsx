@@ -16,7 +16,7 @@ export default function Home() {
     if (impactfulRef.current) {
       const highlightAnnotation = annotate(impactfulRef.current, {
         type: "highlight",
-        color: "#6b46c1",
+        color: "royalblue",
         padding: 4,
       });
       highlightAnnotation.show();
@@ -25,7 +25,7 @@ export default function Home() {
     if (impactfulRef2.current) {
       const strikeThroughAnnotation = annotate(impactfulRef2.current, {
         type: "strike-through",
-        color: "#6b46c1",
+        color: "royalblue",
         padding: 4,
       });
       strikeThroughAnnotation.show();
@@ -69,7 +69,7 @@ export default function Home() {
             </p>
           </WavyBackground>
           <CardGroup />
-          <div className="dark flex items-center justify-center bg-background m-16">
+          <div className="dark flex items-center justify-center bg-background m-12">
             <GradientResumeButton />
           </div>
         </div>

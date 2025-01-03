@@ -15,7 +15,7 @@ export function GradientResumeButton() {
         rel="noopener noreferrer"
         className="relative block"
       >
-        <Button className="relative flex items-center gap-2 px-6 py-8 rounded-lg bg-background border-0 w-full before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#4fd1c5]/20 before:via-[#38bdf8]/20 before:to-[#4c51bf]/20 before:opacity-0 before:transition-opacity before:duration-500 group-hover:before:opacity-100">
+        <Button className="relative flex items-center gap-2 px-6 py-8 rounded-lg bg-background border-0 w-full animate-pulse group-hover:animate-none before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#4fd1c5]/20 before:via-[#38bdf8]/20 before:to-[#4c51bf]/20 before:opacity-0 before:transition-opacity before:duration-500 group-hover:before:opacity-100">
           <FileText className="h-5 w-5 transition-transform duration-300 ease-out group-hover:scale-110" />
           <span className="text-lg font-semibold">View Resume</span>
           <ArrowUpRight className="ml-1 h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1" />
