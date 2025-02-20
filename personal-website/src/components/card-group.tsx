@@ -16,7 +16,7 @@ export default function CardGroup() {
         content={
           "Experience language learning like your favorite social media feed—with short videos, built-in quizzes, and voice feedback to help you practice as you scroll."
         }
-        image="/talktalk.PNG"
+        image="/talktalk.png"
         link={"https://github.com/erika-24/talktalk"}
       />
       <Card
