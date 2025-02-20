@@ -12,6 +12,14 @@ export default function CardGroup() {
         link={"https://pathtoswe.vercel.app/"}
       />
       <Card
+        title={"TalkTalk: Learn Languages Through Social Connection"}
+        content={
+          "Experience language learning like your favorite social media feed—with short videos, built-in quizzes, and voice feedback to help you practice as you scroll."
+        }
+        image="/talktalk.PNG"
+        link={"https://github.com/erika-24/talktalk"}
+      />
+      <Card
         title={"GPTutor-Math: Personal AI Tutoring for CMU Students"}
         content={
           "Get step-by-step homework guidance in math courses, with personalized feedback powered by ChatGPT."
