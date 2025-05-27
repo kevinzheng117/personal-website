@@ -17,7 +17,7 @@ export default function CardGroup() {
           "Experience language learning like your favorite social media feed—with short videos, built-in quizzes, and voice feedback to help you practice as you scroll."
         }
         image="/talktalk.png"
-        link={"https://github.com/erika-24/talktalk"}
+        link={"https://talktalk-henna.vercel.app/"}
       />
       <Card
         title={"GPTutor-Math: Personal AI Tutoring for CMU Students"}
