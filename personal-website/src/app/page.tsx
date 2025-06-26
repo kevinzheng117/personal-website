@@ -6,7 +6,7 @@ import { WavyBackground } from "@/components/ui/wavy-background";
 import { FloatingProfile } from "@/components/floating-profile";
 import { annotate } from "rough-notation";
 import CardGroup from "@/components/card-group";
-import { GradientResumeButton } from "@/components/resume-button";
+import WorkExperience from "@/components/work-experience";
 
 export default function Home() {
   const impactfulRef = useRef<HTMLSpanElement>(null);
@@ -55,25 +55,28 @@ export default function Home() {
                   className={"text-cyan-300"}
                 ></FlipWords>
               </h1>
-              <p className="m-24 text-md md:text-lg mt-4 max-w-xl mx-auto">
-                Hello, I’m a student at Carnegie Mellon University focused on
-                developing{" "}
-                <span ref={impactfulRef} className="inline-block">
-                  impactful software
-                </span>{" "}
-                that helps people share ideas and express what brings them joy.
-                Currently based in{" "}
+              <p className="m-24 text-md md:text-lg mt-6 max-w-xl mx-auto">
+                Hello, I’m an Information Systems & Computer Science student at
+                Carnegie Mellon University interested in building software that
+                connects people and sparks joy. Currently based in{" "}
                 <span ref={impactfulRef2} className="inline-block">
-                  Shanghai, Millburn, Bryn Mawr,
+                  Shanghai, Millburn, Bryn Mawr,{" "}
                 </span>{" "}
-                Pittsburgh, PA.
+                Pittsburgh, PA.{" "}
+                <span ref={impactfulRef} className="inline-block">
+                  <a
+                    href="/Kevin_Zheng_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Learn more about my experiences here.
+                  </a>
+                </span>
               </p>
             </div>
           </WavyBackground>
+          <WorkExperience />
           <CardGroup />
-          <div className="dark flex items-center justify-center bg-background m-12">
-            <GradientResumeButton />
-          </div>
         </div>
       </main>
     </div>
