@@ -1,4 +1,4 @@
-import Card from "@/components/card";
+import Card from "@/components/project-card";
 
 export default function CardGroup() {
   return (
