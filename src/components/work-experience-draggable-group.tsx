@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import {
   DraggableCardBody,
   DraggableCardContainer,
@@ -105,9 +106,11 @@ export default function WorkExperienceDraggableGroup() {
           initialRotateZ={stackStyles[index].initialRotateZ}
         >
           <div className="flex items-start gap-4 p-6">
-            <img
+            <Image
               src={item.image}
               alt={item.title}
+              width={64}
+              height={64}
               className="w-16 h-16 object-cover rounded-lg flex-shrink-0"
             />
             <div className="flex-1">

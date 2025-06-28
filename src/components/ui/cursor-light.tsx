@@ -11,9 +11,9 @@ interface CursorLightProps {
 
 export const CursorLight: React.FC<CursorLightProps> = ({
   size = 800,
-  color = "rgba(79, 209, 197, 0.08)", // Much more subtle color
+  color = "rgba(79, 209, 197, 0.13)", // Slightly brighter
   blur = 150,
-  opacity = 1,
+  opacity = 0.85, // Slightly brighter
 }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
@@ -64,7 +64,7 @@ export const CursorLight: React.FC<CursorLightProps> = ({
           width: size,
           height: size,
           opacity: isVisible ? opacity : 0,
-          background: `radial-gradient(circle, ${color} 0%, rgba(79, 209, 197, 0.03) 60%, transparent 100%)`,
+          background: `radial-gradient(circle, ${color} 0%, rgba(79, 209, 197, 0.07) 60%, transparent 100%)`,
           filter: `blur(${blur}px)`,
         }}
       />
@@ -77,8 +77,8 @@ export const CursorLight: React.FC<CursorLightProps> = ({
           top: position.y - 300,
           width: 600,
           height: 600,
-          opacity: isVisible ? 0.25 : 0,
-          background: `radial-gradient(circle, rgba(79, 209, 197, 0.05) 0%, rgba(79, 209, 197, 0.02) 70%, transparent 100%)`,
+          opacity: isVisible ? 0.22 : 0,
+          background: `radial-gradient(circle, rgba(79, 209, 197, 0.09) 0%, rgba(79, 209, 197, 0.03) 70%, transparent 100%)`,
           filter: `blur(100px)`,
         }}
       />

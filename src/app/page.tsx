@@ -5,7 +5,7 @@ import { FlipWords } from "@/components/ui/flip-words";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import { CursorLight } from "@/components/ui/cursor-light";
 import { FloatingProfile } from "@/components/floating-profile";
-import CardGroup from "@/components/card-group";
+import ProjectCardGroup from "@/components/project-card-group";
 import WorkExperienceDraggableGroup from "@/components/work-experience-draggable-group";
 
 export default function Home() {
@@ -39,18 +39,45 @@ export default function Home() {
                 Hello, I&apos;m an Information Systems & Computer Science
                 student at Carnegie Mellon University interested in building
                 software that connects people and sparks joy. Currently based in{" "}
-                <span className="bg-gradient-to-r from-emerald-300 to-cyan-300 bg-clip-text text-transparent font-semibold drop-shadow-sm">
+                <span className="text-gray-400 line-through mr-1">
                   Beijing, Shanghai, Millburn, Philadelphia,
-                </span>{" "}
-                Pittsburgh.{" "}
+                </span>
+                Pittsburgh, PA{" "}
                 <span className="inline-block">
                   <a
                     href="/Kevin_Zheng_Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-emerald-300 to-cyan-300 bg-clip-text text-transparent font-semibold hover:from-emerald-200 hover:to-cyan-200 transition-all duration-300 drop-shadow-sm"
+                    className="group bg-gradient-to-r from-emerald-300 to-cyan-300 bg-clip-text text-transparent font-semibold hover:from-emerald-200 hover:to-cyan-200 transition-all duration-300 drop-shadow-sm inline-flex items-center"
                   >
                     Learn more about my experiences here.
+                    <svg
+                      className="ml-1 w-4 h-4 transition-transform duration-200 ease-linear group-hover:translate-x-1 group-hover:-translate-y-1"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <defs>
+                        <linearGradient
+                          id="arrow-gradient"
+                          x1="0"
+                          y1="16"
+                          x2="16"
+                          y2="0"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stopColor="#4fd1c5" />
+                          <stop offset="1" stopColor="#38bdf8" />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d="M4 12L12 4M12 4H6M12 4V10"
+                        stroke="url(#arrow-gradient)"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                   </a>
                 </span>
               </p>
@@ -77,7 +104,7 @@ export default function Home() {
             </div>
           </div>
 
-          <CardGroup />
+          <ProjectCardGroup />
         </div>
       </main>
     </div>
