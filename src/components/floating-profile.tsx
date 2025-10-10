@@ -34,11 +34,11 @@ export function FloatingProfile() {
     <>
       <div ref={profileRef} className="h-0" />
       <div className="md:fixed absolute inset-x-0 top-0 z-50">
-        <div className="mx-auto w-full">
+        <div className="mx-auto w-full max-w-[100vw] overflow-x-hidden">
           <div className="relative flex items-center justify-between p-4">
             <div
               className={`transition-all duration-500 ease-in-out ${
-                isScrolled ? "translate-x-0" : "translate-x-[calc(50vw-120px)]"
+                isScrolled ? "translate-x-0" : "translate-x-[calc(50vw-90px)]"
               }`}
             >
               <Avatar className="h-12 w-12 border-2 border-primary">
@@ -48,7 +48,7 @@ export function FloatingProfile() {
             </div>
             <div
               className={`flex items-center gap-2 transition-all duration-500 ease-in-out ${
-                isScrolled ? "translate-x-0" : "-translate-x-[calc(50vw-120px)]"
+                isScrolled ? "translate-x-0" : "-translate-x-[calc(50vw-150px)]"
               }`}
             >
               <Button
