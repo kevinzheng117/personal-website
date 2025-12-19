@@ -35,10 +35,10 @@ export default function Home() {
                   }
                 ></FlipWords>
               </h1>
-              <p className="m-24 text-md md:text-lg mt-6 max-w-xl mx-auto">
-                Hello, I&apos;m an Information Systems & Computer Science
-                student at Carnegie Mellon University interested in building
-                software that connects people and sparks joy. Currently based in{" "}
+              <p className="m-28 text-md md:text-lg mt-6 max-w-xl mx-auto">
+                Hello, I&apos;m a Computer Science student at Carnegie Mellon
+                University interested in building software that connects people
+                and sparks joy. Currently based in{" "}
                 <span className="text-gray-400 line-through mr-1">
                   Beijing, Shanghai, Millburn, Philadelphia,
                 </span>
