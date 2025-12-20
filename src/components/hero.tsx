@@ -45,13 +45,12 @@ export function Hero() {
       <AnimatedSection delay={motionConfig.pageLoad.links}>
         <div className="flex flex-wrap items-center gap-x-3 w-fit">
           {LINKS.map((link, index) => {
-            const isExternal = link.href.startsWith("http");
             return (
               <motion.a
                 key={link.label}
                 href={link.href}
-                target={isExternal ? "_blank" : undefined}
-                rel={isExternal ? "noopener noreferrer" : undefined}
+                target={"_blank"}
+                rel={"noopener noreferrer"}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{
