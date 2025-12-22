@@ -24,7 +24,7 @@ export function Tabs({ tabs, children, defaultTab }: TabsProps) {
   return (
     <div>
       {/* Tab Navigation */}
-      <div className="flex gap-x-6 border-b border-gray-200">
+      <div className="flex gap-x-6 border-b border-gray-200 px-4 md:px-0">
         {tabs.map((tab) => (
           <button
             key={tab.id}
@@ -64,7 +64,7 @@ export function Tabs({ tabs, children, defaultTab }: TabsProps) {
               duration: motionConfig.duration.normal,
               ease: motionConfig.easing.default,
             }}
-            className="pt-6"
+            className="pt-6 px-4 md:px-0"
           >
             {activeContent}
           </motion.div>

@@ -16,9 +16,9 @@ export const EXPERIENCE: Experience[] = [
     dates: "Jun 2025 – Aug 2025",
     logo: "/capital_one.png",
     bullets: [
-      "Built Python/Java microservices to automate auto-loan document processing and validation.",
-      "Reduced manual reviews; added real-time notifications using AWS + Kafka.",
-      "Integrated Spring Boot services with observability and fault-tolerant retries.",
+      "Reduced document review latency from 2 hours to 5 minutes, processing 1.4M uploads annually.",
+      "Enhanced Python/Java microservices to automate auto-loan document processing and validation.",
+      "Added Kafka-based order validation and missing-document feedback in Spring Boot, dispatching 70K dealer notifications per year and saving 11.5K agent hours annually.",
     ],
     tech: ["Java", "Python", "Spring Boot", "AWS", "Kafka", "Docker", "Splunk"],
   },
