@@ -13,7 +13,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
       {/* Top row: Company Name and Dates */}
       <div className="flex items-start justify-between gap-x-6">
         <div>
-          <h3 className="text-2xl font-semibold tracking-tight text-gray-900 mb-1">
+          <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-gray-900 mb-1 leading-tight sm:leading-normal text-balance">
             {experience.company}
           </h3>
           {/* Role */}

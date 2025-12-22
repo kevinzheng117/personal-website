@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 
 interface HoverPreviewProps {
@@ -20,6 +20,7 @@ export function HoverPreview({
   const containerRef = useRef<HTMLDivElement>(null);
   const previewRef = useRef<HTMLDivElement>(null);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const lastMouseEventRef = useRef<React.MouseEvent<HTMLDivElement> | null>(null);
 
   // Preload image
   useEffect(() => {
@@ -28,22 +29,7 @@ export function HoverPreview({
     img.onload = () => setImageLoaded(true);
   }, [image]);
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
-    setIsVisible(true);
-    updatePosition(e);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (isVisible) {
-      updatePosition(e);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    setIsVisible(false);
-  };
-
-  const updatePosition = (e: React.MouseEvent<HTMLDivElement>) => {
+  const updatePositionWithEvent = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
 
     const viewportWidth = window.innerWidth;
@@ -55,8 +41,17 @@ export function HoverPreview({
 
     if (previewRef.current) {
       const rect = previewRef.current.getBoundingClientRect();
-      actualWidth = rect.width;
-      previewHeight = rect.height;
+      // Only use actual dimensions if element has been rendered and has non-zero size
+      if (rect.width > 0 && rect.height > 0) {
+        actualWidth = rect.width;
+        previewHeight = rect.height;
+      } else {
+        // Element exists but hasn't been measured yet, use calculated fallback
+        const baseWidth = 420; // w-[420px]
+        const baseHeight = 260; // h-[260px]
+        actualWidth = Math.min(baseWidth, viewportWidth * 0.9);
+        previewHeight = actualWidth * (baseHeight / baseWidth);
+      }
     } else {
       // Fallback to calculated dimensions if preview not yet rendered
       const baseWidth = 420; // w-[420px]
@@ -85,6 +80,40 @@ export function HoverPreview({
     y = Math.max(20, Math.min(y, viewportHeight - previewHeight - 20));
 
     setPosition({ x, y });
+  }, []);
+
+  // Recalculate position once preview element is rendered and has actual dimensions
+  useEffect(() => {
+    if (isVisible && imageLoaded && previewRef.current && lastMouseEventRef.current) {
+      // Use requestAnimationFrame to ensure the element has been laid out
+      requestAnimationFrame(() => {
+        if (previewRef.current && lastMouseEventRef.current) {
+          const rect = previewRef.current.getBoundingClientRect();
+          // Only recalculate if element has been measured and has non-zero size
+          if (rect.width > 0 && rect.height > 0) {
+            updatePositionWithEvent(lastMouseEventRef.current);
+          }
+        }
+      });
+    }
+  }, [isVisible, imageLoaded, updatePositionWithEvent]);
+
+  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsVisible(true);
+    lastMouseEventRef.current = e;
+    updatePositionWithEvent(e);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isVisible) {
+      lastMouseEventRef.current = e;
+      updatePositionWithEvent(e);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsVisible(false);
+    lastMouseEventRef.current = null;
   };
 
   return (
