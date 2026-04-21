@@ -13,13 +13,13 @@ export function Hero() {
       {/* Avatar */}
       <AnimatedSection delay={motionConfig.pageLoad.avatar}>
         <div className="relative w-12 h-12 rounded-full overflow-hidden border border-gray-100">
-            <Image
-              src="/kevin_photo.jpg"
-              alt="Kevin Zheng"
-              fill
-              className="object-cover"
-              priority
-            />
+          <Image
+            src="/kevin_photo.PNG"
+            alt="Kevin Zheng"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
       </AnimatedSection>
 
@@ -47,30 +47,30 @@ export function Hero() {
           {LINKS.map((link, index) => {
             const isExternal = link.href.startsWith("http");
             return (
-            <motion.a
-              key={link.label}
-              href={link.href}
+              <motion.a
+                key={link.label}
+                href={link.href}
                 target={isExternal ? "_blank" : undefined}
                 rel={isExternal ? "noopener noreferrer" : undefined}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: motionConfig.duration.normal,
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: motionConfig.duration.normal,
                   delay:
                     motionConfig.pageLoad.links +
                     index * motionConfig.stagger.normal,
-                ease: motionConfig.easing.default,
-              }}
+                  ease: motionConfig.easing.default,
+                }}
                 className="text-xs md:text-sm border-b border-gray-200 font-medium hover:border-gray-500 transition-all duration-300 ease-in-out"
-            >
-              {link.previewImage ? (
-                <HoverPreview image={link.previewImage}>
-                  {link.label}
-                </HoverPreview>
-              ) : (
-                link.label
-              )}
-            </motion.a>
+              >
+                {link.previewImage ? (
+                  <HoverPreview image={link.previewImage}>
+                    {link.label}
+                  </HoverPreview>
+                ) : (
+                  link.label
+                )}
+              </motion.a>
             );
           })}
         </div>
