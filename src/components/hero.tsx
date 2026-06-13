@@ -14,7 +14,7 @@ export function Hero() {
       <AnimatedSection delay={motionConfig.pageLoad.avatar}>
         <div className="relative w-12 h-12 rounded-full overflow-hidden border border-gray-100">
           <Image
-            src="/kevin_photo.PNG"
+            src="/kevin_photo.png"
             alt="Kevin Zheng"
             fill
             className="object-cover"
